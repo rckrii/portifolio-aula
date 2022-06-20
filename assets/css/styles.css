@@ -9,13 +9,16 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
-::root {
+:root {
     --primary-color: #344955;
     --secondary-color: #F9AA33;
     --tertiary-color: #232F34;
-    --quaternary-color: #1c1b1b;
-    /*black light */
     --complementary-color: #4A6572;
+
+    --black-light: #1c1b1b;
+    --black-dark: #0a0909;
+
+    --gray-100: #444444;
 }
 
 .container {
@@ -24,16 +27,18 @@ body {
 
 }
 
+.content {
+    max-width: 1366;
+    margin: 0 auto;
+    height: 96px;
+}
+
 .header-content {
     width: 100%;
-    max-width: 1366;
-    height: 96px;
-
-    margin: 0 auto;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 24px 0px;
 }
 
 .header-logo {
@@ -45,7 +50,7 @@ body {
 }
 
 .header-logo-destaque {
-    color: var(--secondary-color)
+    color: var(--secondary-color);
 }
 
 .header-menu {
@@ -71,7 +76,7 @@ body {
     font-weight: 600;
     font-size: 18px;
     line-height: 120%;
-    color: var(--quaternary-color);
+    color: var(--black-light);
     transition: 0.5s ease;
 }
 
@@ -79,9 +84,9 @@ body {
     color: var(--secondary-color)
 }
 
-.header-content-wrapper{
-  display: flex;
-  align-items: center;  
+.header-content-wrapper {
+    display: flex;
+    align-items: center;
 }
 
 .btn-primary {
@@ -101,6 +106,92 @@ body {
     margin-right: 47px;
 }
 
-.btn-primary:hover{
+.btn-primary:hover {
     filter: brightness()0.9;
+}
+
+.hero {
+    margin-top: 64px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero-headline {
+    width: 45%;
+}
+
+.hero-headline h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 120%;
+    color: var(--black-dark);
+}
+
+.hero-headline p {
+    margin-top: 48px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 120%;
+    color: var(--gray-100);
+}
+
+.hero-headline p img {
+    margin-right: 8px;
+}
+
+.hero-image {
+    width: 45%;
+
+}
+
+.hero-image img {
+    width: 100%;
+
+}
+
+
+
+.hero-headline button {
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    
+    margin-top: 63px;
+}
+
+.buttons-wrapper{
+    display: flex;
+}
+
+.btn-primary-hero{
+    width: 164px;
+    height: 56px;
+    color: var(--tertiary-color);
+    background-color: var(--secondary-color);
+    margin-right: 32px;
+    transition: 0.5s ease;
+}
+
+.btn-primary-hero:hover{
+    filter: brightness(0.8);
+}
+
+.btn-secondary-hero{
+    background: transparent;
+    transition: 0.5s ease;
+    display: flex;
+    align-items: center;
+}
+
+.btn-secondary-hero::after{
+    content:url(/assets/image/arrow-up-right.svg);
+    width: 24px;
+    height: 24px;
 }
