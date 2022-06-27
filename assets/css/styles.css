@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: "icomoon";
+    src: url(../fonts/icomoon.ttf.css);
+    src: url(..//fonts/icomoon.eot.css#iefix) format('embedded-opentype');
+    src: url(..//fonts/icomoon.woff.css) format('woff');
+}
+
 body {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-family: 'Raleway', sans-serif;
@@ -19,18 +26,20 @@ body {
     --black-dark: #0a0909;
 
     --gray-100: #444444;
+    --gray-200: #2c2c2c;
+
+    --background-color: #fbfafa;
 }
 
 .container {
     width: 100%;
     height: 100vh;
-
 }
 
 .content {
-    max-width: 1366;
-    margin: 0 auto;
+    max-width: 1366px;
     height: 96px;
+    margin: 0 auto;
 }
 
 .header-content {
@@ -55,7 +64,6 @@ body {
 
 .header-menu {
     display: flex;
-
 }
 
 .header-menu li {
@@ -81,7 +89,7 @@ body {
 }
 
 .header-menu li a:hover {
-    color: var(--secondary-color)
+    color: var(--secondary-color);
 }
 
 .header-content-wrapper {
@@ -106,8 +114,22 @@ body {
     margin-right: 47px;
 }
 
+.icon-sun::after {
+    display: block;
+    content: "\e9e3";
+    font-family: 'icomoon';
+    font-size: 32px;
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.icon-sun:hover::after {
+    color: var(--black-light);
+}
+
 .btn-primary:hover {
-    filter: brightness()0.9;
+    filter: brightness(0.9);
 }
 
 .hero {
@@ -143,15 +165,11 @@ body {
 
 .hero-image {
     width: 45%;
-
 }
 
 .hero-image img {
     width: 100%;
-
 }
-
-
 
 .hero-headline button {
     border: none;
@@ -162,15 +180,15 @@ body {
     font-weight: 700;
     font-size: 16px;
     line-height: 120%;
-    
+
     margin-top: 63px;
 }
 
-.buttons-wrapper{
+.buttons-wrapper {
     display: flex;
 }
 
-.btn-primary-hero{
+.btn-primary-hero {
     width: 164px;
     height: 56px;
     color: var(--tertiary-color);
@@ -179,19 +197,169 @@ body {
     transition: 0.5s ease;
 }
 
-.btn-primary-hero:hover{
+.btn-primary-hero:hover {
     filter: brightness(0.8);
 }
 
-.btn-secondary-hero{
+.btn-secondary-hero {
     background: transparent;
     transition: 0.5s ease;
     display: flex;
     align-items: center;
 }
 
-.btn-secondary-hero::after{
-    content:url(/assets/image/arrow-up-right.svg);
+.btn-secondary-hero::after {
+    content: url(/assets/image/arrow-up-right.svg);
     width: 24px;
     height: 24px;
+}
+
+.hero-email {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-email a {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--complementary-color);
+    writing-mode: vertical-lr;
+    margin-top: 136px;
+    position: relative;
+}
+
+.hero-email a::after {
+    content: url(/assets/image/line-email.svg);
+    display: block;
+    position: absolute;
+    left: 15%;
+    bottom: -91%;
+}
+
+.arrow {
+    display: flex;
+    justify-content: center;
+}
+
+.arrow img {
+    animation: animated-arrow 1s ease infinite alternate;
+}
+
+@keyframes animated-arrow {
+    to {
+        transform: translateY(-5px);
+    }
+}
+
+/*Skills*/
+
+.skills-content {
+    margin-top: 80px;
+}
+
+.skills-content h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 120%;
+    color: var(--black-dark);
+
+}
+
+.skills-content .subtitle {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 120%;
+    color: var(--gray-200);
+
+    width: 53%;
+    margin-top: 40px;
+}
+
+.skills-content h3 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 120%;
+    color: var(--tertiary-color);
+    margin-top: 72px;
+}
+
+.card-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    width: 394px;
+    height: 196;
+    background-color: var(--background-color);
+    padding: 0 38px 24px 38px;
+    margin-top: 40px;
+}
+
+.card-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-icon {
+    background-color: var(--primary-color);
+    padding: 26px 15px;
+    /*ou width:61px height:84px; Desvangatagem pois teria que utilizar o display flex.*/
+}
+
+.card-icon-figma::before {
+    font-family: "icomoon";
+    content: "\e964";
+    font-size: 32px;
+    color: var(--secondary-color);
+}
+
+.card-icon-star::before {
+    font-family: "icomoon";
+    content: "\e9e1";
+    font-size: 32px;
+    color: var(--secondary-color);
+}
+
+.card-icon-code::before {
+    font-family: "icomoon";
+    content: "\e940";
+    font-size: 32px;
+    color: var(--secondary-color);
+}
+
+.card-icon-arrow::before {
+    display: inline-block;
+    font-family: "icomoon";
+    content: "\e912";
+    font-size: 24px;
+    color: var(--tertiary-color);
+    margin-top: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card h4 {
+    margin-top: 14px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 120%;
+    color: var(--tertiary-color);
+}
+
+.card p {
+    margin-top: 11px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 120%;
+    color: var(--gray-100);
 }
